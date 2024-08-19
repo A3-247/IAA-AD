@@ -19,10 +19,14 @@ df_list = df_array.tolist()
 dfA = pd.read_csv("C:\\Users\\hppc\\Downloads\\ADSP\\ADNI_MUL_add_T1_7_28_2024Z.csv", encoding="ANSI")
 df_arrayA = np.array(dfA)
 df_listA = df_arrayA.tolist()
-dfAGE = pd.read_csv("C:\\Users\\hppc\\Downloads\\ADSP\\AGEmessIIM3V.csv", encoding="UTF-8")
-dfAGE_array = np.array(dfAGE)
-dfACC = pd.read_csv("C:\\Users\\hppc\\Downloads\\ADSP\\Y3_lossIII.csv",encoding="UTF-8")
-dfACC_array = np.array(dfACC)
+dfAGE = []
+dfAGE_array = np.zeros((6,161))
+# dfACC = pd.read_csv("./C_loss.csv", encoding="UTF-8")
+# dfACC_array = np.array(dfACC)
+# dfAGE = pd.read_csv("C:\\Users\\hppc\\Downloads\\ADSP\\AGEmessIIM3V.CSV",encoding="UTF-8")
+# dfAGE_array = np.array(dfAGE)
+dfACC = []
+dfACC_array = np.zeros((1,161))
 dfAGE_list=[]
 dfACC_list=[]
 
@@ -34,7 +38,10 @@ def data_init():
     global X_2dC
     global X_2dD
     global Y_2d
-    global dfAGE_list
+    global dfAGE
+    global dfAGE_array
+    global dfACC
+    global dfACC_array
     Y_2dA = [0 for i in range(29)]
     Y_2dB = [0 for i in range(49)]
     Y_2dC = [0 for i in range(51)]
@@ -224,7 +231,7 @@ def data_init():
                 XXX_2d[i][t] = np.array(X[i][k, l])
                 t = t + 1
     print(t)
-
+    print('XXX_2d:',XXX_2d[0])
     tAA, tBB, tCC, tDD = 0, 0, 0, 0
     global X_2d
     global Y_2d
@@ -308,66 +315,6 @@ def data_label(op):
         for i in range(120):
             if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
                 continue
-            Y_2d[It] = df_list[i][20]
-            print(Y_2d[It])
-            It = It + 1
-        print(It)
-        for i in range(51):
-            if i == 0 or i == 31 or i == 32:
-                continue;
-            Y_2d[It] = df_listA[i][20]
-            print(np.array(Y_2d[It]))
-            It = It + 1
-        print(It)
-    if op == 2:
-        for i in range(120):
-            if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
-                continue
-            Y_2d[It] = df_list[i][22]
-            print(Y_2d[It])
-            It = It + 1
-        print(It)
-        for i in range(51):
-            if i == 0 or i == 31 or i == 32:
-                continue;
-            Y_2d[It] = df_listA[i][22]
-            print(np.array(Y_2d[It]))
-            It = It + 1
-        print(It)
-    if op == 3:
-        for i in range(120):
-            if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
-                continue
-            Y_2d[It] = df_list[i][24]
-            print(Y_2d[It])
-            It = It + 1
-        print(It)
-        for i in range(51):
-            if i == 0 or i == 31 or i == 32:
-                continue;
-            Y_2d[It] = df_listA[i][24]
-            print(np.array(Y_2d[It]))
-            It = It + 1
-        print(It)
-    if op == 4:
-        for i in range(120):
-            if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
-                continue
-            Y_2d[It] = df_list[i][26]
-            print(Y_2d[It])
-            It = It + 1
-        print(It)
-        for i in range(51):
-            if i == 0 or i == 31 or i == 32:
-                continue;
-            Y_2d[It] = df_listA[i][26]
-            print(np.array(Y_2d[It]))
-            It = It + 1
-        print(It)
-    if op == 5:
-        for i in range(120):
-            if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
-                continue
             Y_2d[It] = df_list[i][31]
             print(Y_2d[It])
             It = It + 1
@@ -376,6 +323,66 @@ def data_label(op):
             if i == 0 or i == 31 or i == 32:
                 continue;
             Y_2d[It] = df_listA[i][31]
+            print(np.array(Y_2d[It]))
+            It = It + 1
+        print(It)
+    if op == 2:
+        for i in range(120):
+            if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
+                continue
+            Y_2d[It] = X_2d[i][0]
+            print(Y_2d[It])
+            It = It + 1
+        print(It)
+        for i in range(51):
+            if i == 0 or i == 31 or i == 32:
+                continue;
+            Y_2d[It] = X_2d[i][0]
+            print(np.array(Y_2d[It]))
+            It = It + 1
+        print(It)
+    if op == 3:
+        for i in range(120):
+            if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
+                continue
+            Y_2d[It] = X_2d[i][1]
+            print(Y_2d[It])
+            It = It + 1
+        print(It)
+        for i in range(51):
+            if i == 0 or i == 31 or i == 32:
+                continue;
+            Y_2d[It] = X_2d[i][1]
+            print(np.array(Y_2d[It]))
+            It = It + 1
+        print(It)
+    if op == 4:
+        for i in range(120):
+            if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
+                continue
+            Y_2d[It] = X_2d[i][2]
+            print(Y_2d[It])
+            It = It + 1
+        print(It)
+        for i in range(51):
+            if i == 0 or i == 31 or i == 32:
+                continue;
+            Y_2d[It] = X_2d[i][2]
+            print(np.array(Y_2d[It]))
+            It = It + 1
+        print(It)
+    if op == 5:
+        for i in range(120):
+            if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
+                continue
+            Y_2d[It] = X_2d[i][3]
+            print(Y_2d[It])
+            It = It + 1
+        print(It)
+        for i in range(51):
+            if i == 0 or i == 31 or i == 32:
+                continue;
+            Y_2d[It] = X_2d[i][3]
             print(np.array(Y_2d[It]))
             It = It + 1
         print(It)
@@ -397,8 +404,12 @@ def data_label(op):
 
 def data_feature(op):
     global dfAGE_list
+    global dfACC_list
     if op == 0:
         # 导入回归器的损失结果,第一轮训练不用
+        print("dfAGE_array:",dfAGE_array)
         dfAGE_list = dfAGE_array.tolist()
+        print("dfAGE_list:",dfAGE_list)
     else:
         dfACC_list = dfACC_array.tolist()
+        print("dfACC_list:", dfACC_list)
