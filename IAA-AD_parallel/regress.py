@@ -27,7 +27,7 @@ X_2dB = [[0 for i in range(8)] for j in range(49)]
 X_2dC = [[0 for i in range(8)] for j in range(51)]
 X_2dD = [[0 for i in range(8)] for j in range(32)]
 
-AAA = [0 for i in range(640)]
+AAA = [0 for i in range(600)]
 
 
 class SelfAttention(nn.Module):
