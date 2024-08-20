@@ -13,10 +13,10 @@ XXX_2d = [[0 for i in range(13858)] for j in range(161)]
 
 Y_2d = [0 for i in range(161)]
 X_2d = [[0 for i in range(8)] for j in range(161)]
-df = pd.read_csv("C:\\Users\\hppc\\Downloads\\ADSP\\ADNI_MUL_T1_6_24_2024.csv", encoding="ANSI")  # Read data
+df = pd.read_csv("./ADNI_MUL_T1_6_24_2024.csv", encoding="ANSI")  # Read data
 df_array = np.array(df)
 df_list = df_array.tolist()
-dfA = pd.read_csv("C:\\Users\\hppc\\Downloads\\ADSP\\ADNI_MUL_add_T1_7_28_2024Z.csv", encoding="ANSI")
+dfA = pd.read_csv("./ADNI_MUL_add_T1_7_28_2024Z.csv", encoding="ANSI")
 df_arrayA = np.array(dfA)
 df_listA = df_arrayA.tolist()
 dfAGE = []
