@@ -3,3 +3,4 @@ IAA-AD is a multi-categorical Alzheimer's disease diagnosis algorithm based on i
 ```
 python3 ./main
 ```
+The normal version of the program uses Python 3.8.18 torch 2.2.2, and the parallel version of the program uses Python 3.6.3 and torch 1.4.0, which runs on the linux system
