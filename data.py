@@ -193,13 +193,13 @@ def data_init():
             continue;
         if i < 10:
             data[I] = scio.loadmat(
-                'D:\\MATLAB\\R2016b\\bin\\conn_project2-1A\\resultsROI_Subject00' + str(i) + '_Condition001.mat')
+                './resultsROI_Subject00' + str(i) + '_Condition001.mat')
         elif i >= 10 and i <= 99:
             data[I] = scio.loadmat(
-                'D:\\MATLAB\\R2016b\\bin\\conn_project2-1A\\resultsROI_Subject0' + str(i) + '_Condition001.mat')
+                './resultsROI_Subject0' + str(i) + '_Condition001.mat')
         else:
             data[I] = scio.loadmat(
-                'D:\\MATLAB\\R2016b\\bin\\conn_project2-1A\\resultsROI_Subject' + str(i) + '_Condition001.mat')
+                './resultsROI_Subject' + str(i) + '_Condition001.mat')
         I = I + 1
         print(i, I)
     for i in range(51):
@@ -207,11 +207,11 @@ def data_init():
             continue
         if i < 10:
             data[I] = scio.loadmat(
-                'D:\\LINE2-1\\conn_project2-add\\resultsROI_Subject00' + str(i) + '_Condition001.mat')
+                './resultsROI_Subject00' + str(i) + '_Condition001.mat')
         elif i >= 10 and i <= 99:
-            data[I] = scio.loadmat('D:\\LINE2-1\\conn_project2-add\\resultsROI_Subject0' + str(i) + '_Condition001.mat')
+            data[I] = scio.loadmat('./resultsROI_Subject0' + str(i) + '_Condition001.mat')
         else:
-            data[I] = scio.loadmat('D:\\LINE2-1\\conn_project2-add\\resultsROI_Subject' + str(i) + '_Condition001.mat')
+            data[I] = scio.loadmat('./resultsROI_Subject' + str(i) + '_Condition001.mat')
         I = I + 1
         print(i, I)
 
