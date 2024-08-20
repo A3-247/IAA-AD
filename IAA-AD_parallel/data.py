@@ -49,7 +49,7 @@ def data_init():
     Y_2dC = [0 for i in range(51)]
     Y_2dD = [0 for i in range(32)]
 
-    tA, tB, tC, tD = 0, 0, 0, 0  # 读取出相关数据
+    tA, tB, tC, tD = 0, 0, 0, 0  # Read the relevant data
     for i in range(1, 120):
         if df_list[i][4] == '1':
             X_2dA[tA][0] = np.array(df_list[i][20],dtype=float)
@@ -163,7 +163,7 @@ def data_init():
         print(i, tD)
     print(tD)
 
-    # 插补
+    # Imputation
     print(nan_euclidean_distances(X_2dA, X_2dA))
     print(X_2dA)
     imputer = KNNImputer(n_neighbors=15)
@@ -181,7 +181,7 @@ def data_init():
     imputer = KNNImputer(n_neighbors=26)
     X_2dC = imputer.fit_transform(X_2dC)
     print(X_2dC)
-    # 距离计算
+    # Distance calculation
     print(nan_euclidean_distances(X_2dD, X_2dD))
     print(X_2dD)
     imputer = KNNImputer(n_neighbors=18)
@@ -189,7 +189,7 @@ def data_init():
     print(X_2dD)
     print(len(X_2dA), len(X_2dB), len(X_2dC), len(X_2dD))
     I = 0
-    # 导入fMRI模态数据
+    # Import fMRI modal data
     for i in range(120):
         if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
             continue;
@@ -312,7 +312,7 @@ def data_label(op):
             print(np.array(Y_2d[It]))
             It = It + 1
         print(It)
-        # 结合不同的任务选择不同的目标值(标签)
+        # Choose different target values (labels) for different tasks
     if op == 1:
         for i in range(120):
             if i == 0 or i == 3 or i == 4 or i == 6 or i == 42 or i == 84 or i == 114:
@@ -408,7 +408,7 @@ def data_feature(op):
     global dfAGE_list
     global dfACC_list
     if op == 0:
-        # 导入回归器的损失结果,第一轮训练不用
+        # The loss results of the regressor are imported, and the first round of training is not used
         print("dfAGE_array:",dfAGE_array)
         dfAGE_list = dfAGE_array.tolist()
         print("dfAGE_list:",dfAGE_list)
