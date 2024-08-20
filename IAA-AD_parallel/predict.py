@@ -69,7 +69,7 @@ def classification(epoch):
                 TT = TT + 1
     if epoch == 0:
         with pymp.Parallel(4) as P:
-            for index in P.range(0, 60, 1):
+            for index in P.range(0, 600, 1):
                 iii=AAA[index]
                 XX = np.array(data.XXX_2d, dtype=float)
                 YY = np.array(data.Y_2d, dtype=float)
@@ -143,7 +143,7 @@ def classification(epoch):
                 print(iii, ACCNOW[iii])
     else:
         with pymp.Parallel(4) as P:
-            for index in P.range(0, 60, 1):
+            for index in P.range(0, 600, 1):
                 iii = AAA[index]
                 XX = np.array(data.XXX_2d, dtype=float)
                 YY = np.array(data.Y_2d, dtype=float)
