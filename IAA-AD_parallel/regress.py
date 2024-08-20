@@ -83,7 +83,7 @@ def regression(epoch, num):
                 AAA[TT] = i
                 TT = TT + 1
     with pymp.Parallel(4) as P:
-        for index in P.range(0, 60, 1):
+        for index in P.range(0, 600, 1):
             iii = AAA[index]
             XX = np.array(data.XXX_2d, dtype=float)
             YY = np.array(data.Y_2d, dtype=float)
