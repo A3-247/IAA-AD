@@ -17,9 +17,7 @@ AAA = [0 for i in range(600)]
 
 
 def categorical_cross_entropy(y_true, y_pred):
-    # 避免出现概率为0的情况，加上一个小的偏移量
     epsilon = 1e-7
-    # 计算交叉熵损失
     loss = -np.sum(y_true * np.log(y_pred + epsilon))
     return loss
 
