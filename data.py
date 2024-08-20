@@ -23,7 +23,7 @@ dfAGE = []
 dfAGE_array = np.zeros((6,161))
 # dfACC = pd.read_csv("./C_loss.csv", encoding="UTF-8")
 # dfACC_array = np.array(dfACC)
-# dfAGE = pd.read_csv("C:\\Users\\hppc\\Downloads\\ADSP\\AGEmessIIM3V.CSV",encoding="UTF-8")
+# dfAGE = pd.read_csv("./AGEmessIIM3V.CSV",encoding="UTF-8")
 # dfAGE_array = np.array(dfAGE)
 dfACC = []
 dfACC_array = np.zeros((1,161))
